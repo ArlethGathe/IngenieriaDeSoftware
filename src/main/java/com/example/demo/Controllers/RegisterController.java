@@ -1,9 +1,10 @@
-package com.example.demo.controllers;
+package com.example.demo.Controllers;
 
 import com.example.demo.models.Usuario;
 import com.example.demo.models.Rol;
-import com.example.demo.repositories.RolRepository;
+import com.example.demo.Repositories.RolRepository;
 import com.example.demo.services.UsuarioService;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -24,11 +25,15 @@ public class RegisterController {
     private final RolRepository rolRepository;
     private final AuthenticationManager authenticationManager;
 
-    public RegisterController(UsuarioService usuarioService, RolRepository rolRepository, AuthenticationManager authenticationManager) {
+    public RegisterController(UsuarioService usuarioService, RolRepository rolRepository, 
+                             @Lazy AuthenticationManager authenticationManager) {
         this.usuarioService = usuarioService;
         this.rolRepository = rolRepository;
         this.authenticationManager = authenticationManager;
     }
+    
+    // Rest of the class remains the same
+
 
     @GetMapping("/register")
     public String mostrarFormularioRegistro(Model model) {
