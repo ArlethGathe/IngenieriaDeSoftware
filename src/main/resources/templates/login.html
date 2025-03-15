@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h2 class="text-center">Iniciar Sesión</h2>
+
+    <form action="/login" method="post" class="w-50 mx-auto mt-4">
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo:</label>
+            <input type="email" class="form-control" name="username" required />
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" name="password" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+    </form>
+
+    <p class="text-center mt-3">
+        ¿No tienes cuenta? <a href="/register">Regístrate</a>
+    </p>
+</body>
+</html>
